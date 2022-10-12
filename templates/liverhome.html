@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/carousel/">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
-    <title>RiskAssess | Stroke Prediction</title>
+    <title>RiskAssess | Liver Disease Prediction</title>
 </head>
 <style>
     button {
@@ -170,7 +170,7 @@
         </nav>  
     </header><br /><br />
     <h1 style="text-align:center; color:darkgoldenrod; text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000,
-               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;">Heart Disease Prediction</h1>
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;">Liver Disease Prediction</h1>
     <h5 style="text-align:center; color:white; text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000,
                1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;">Please enter the patient details</h5>
     <form action="{{ url_for('predict')}}" method="post" class="form-inline">
@@ -178,53 +178,34 @@
             
             <div class="tabcontent" id="new">
                 <div class="form-group">
-                    <label for="age">Age </label>
-                    <input type="number" class="form-control" name="age" required="required">
+                    <label for="total_bilirubin">Total_Bilirubin </label>
+                    <input type="number" class="form-control" name="total_bilirubin" required="required">
                 </div>
                 <div class="form-group">
-                    <label for="gender">Gender</label>
-                    <input type="number" class="form-control" name="gender" required="required">
+                    <label for="direct_bilirubin">Direct_Bilirubin</label>
+                    <input type="number" class="form-control" name="direct_bilirubin" required="required">
                 </div>
                 <div class="form-group">
-                    <label for="chestPainType">ChestPainType</label>
-                    <input type="number" class="form-control" name="chestPainType" required="required" />
+                    <label for="alkaline_phosphotase">Alkaline_Phosphotase</label>
+                    <input type="number" class="form-control" name="alkaline_phosphotase" required="required" />
                 </div>
                 <div class="form-group">
-                    <label for="restingBP">RestingBP</label>
-                    <input type="number" class="form-control" name="restingBP" required="required" />
+                    <label for="alamine_aminotransferase">Alamine_Aminotransferase</label>
+                    <input type="number" class="form-control" name="alamine_aminotransferase" required="required" />
                 </div>
                 <div class="form-group">
-                    <label for="cholesterol">Cholesterol</label>
-                    <input type="number" class="form-control" name="cholesterol" required="required" />
+                    <label for="total_protiens">Total_Protiens</label>
+                    <input type="number" class="form-control" name="total_protiens" required="required" />
                 </div>
                 <div class="form-group">
-                    <label for="fastingBS">FastingBS</label>
-                    <input type="number" class="form-control" name="fastingBS" required="required" />
+                    <label for="albumin">Albumin</label>
+                    <input type="number" class="form-control" name="albumin" required="required" />
                 </div>
                 <div class="form-group">
-                    <label for="restingECG">RestingECG</label>
-                    <input type="number" class="form-control" name="restingECG" required="required" />
+                    <label for="albumin_and_globulin_ratio">Albumin_and_Globulin_Ratio</label>
+                    <input type="number" class="form-control" name="albumin_and_globulin_ratio" required="required" />
                 </div>
-                <div class="form-group">
-                    <label for="avg_glucose_level">Average_Glucose_Level</label>
-                    <input type="number" class="form-control" name="avg_glucose_level" required="required" />
-                </div>
-                <div class="form-group">
-                    <label for=maxHR"">MaxHR</label>
-                    <input type="number" class="form-control" name="maxHR" required="required" />
-                </div>
-                <div class="form-group">
-                    <label for="exerciseAngina">ExerciseAngina</label>
-                    <input type="number" class="form-control" name="exerciseAngina" required="required" />
-                </div>
-                <div class="form-group">
-                    <label for="oldpeak">Oldpeak</label>
-                    <input type="number" class="form-control" name="oldpeak" required="required" />
-                </div>
-                   <div class="form-group">
-                    <label for="st_slope">ST_Slope</label>
-                    <input type="number" class="form-control" name="st_slope" required="required" />
-                </div>
+             
                    <div class="form-group">
                     <label for="heartDisease">HeartDisease<div class="form-group">
                     <input type="number" class="form-control" name="heartDisease" required="required" />
