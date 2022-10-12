@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/carousel/">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
-    <title>RiskAssess | Stroke Prediction</title>
+    <title>RiskAssess | Alzheimer Prediction</title>
 </head>
 <style>
     button {
@@ -170,65 +170,13 @@
         </nav>  
     </header><br /><br />
     <h1 style="text-align:center; color:darkgoldenrod; text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000,
-               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;">Heart Disease Prediction</h1>
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;">Alzheimer Prediction</h1>
     <h5 style="text-align:center; color:white; text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000,
                1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;">Please enter the patient details</h5>
     <form action="{{ url_for('predict')}}" method="post" class="form-inline">
         <fieldset>
             
-            <div class="tabcontent" id="new">
-                <div class="form-group">
-                    <label for="age">Age </label>
-                    <input type="number" class="form-control" name="age" required="required">
-                </div>
-                <div class="form-group">
-                    <label for="gender">Gender</label>
-                    <input type="number" class="form-control" name="gender" required="required">
-                </div>
-                <div class="form-group">
-                    <label for="chestPainType">ChestPainType</label>
-                    <input type="number" class="form-control" name="chestPainType" required="required" />
-                </div>
-                <div class="form-group">
-                    <label for="restingBP">RestingBP</label>
-                    <input type="number" class="form-control" name="restingBP" required="required" />
-                </div>
-                <div class="form-group">
-                    <label for="cholesterol">Cholesterol</label>
-                    <input type="number" class="form-control" name="cholesterol" required="required" />
-                </div>
-                <div class="form-group">
-                    <label for="fastingBS">FastingBS</label>
-                    <input type="number" class="form-control" name="fastingBS" required="required" />
-                </div>
-                <div class="form-group">
-                    <label for="restingECG">RestingECG</label>
-                    <input type="number" class="form-control" name="restingECG" required="required" />
-                </div>
-                <div class="form-group">
-                    <label for="avg_glucose_level">Average_Glucose_Level</label>
-                    <input type="number" class="form-control" name="avg_glucose_level" required="required" />
-                </div>
-                <div class="form-group">
-                    <label for=maxHR"">MaxHR</label>
-                    <input type="number" class="form-control" name="maxHR" required="required" />
-                </div>
-                <div class="form-group">
-                    <label for="exerciseAngina">ExerciseAngina</label>
-                    <input type="number" class="form-control" name="exerciseAngina" required="required" />
-                </div>
-                <div class="form-group">
-                    <label for="oldpeak">Oldpeak</label>
-                    <input type="number" class="form-control" name="oldpeak" required="required" />
-                </div>
-                   <div class="form-group">
-                    <label for="st_slope">ST_Slope</label>
-                    <input type="number" class="form-control" name="st_slope" required="required" />
-                </div>
-                   <div class="form-group">
-                    <label for="heartDisease">HeartDisease<div class="form-group">
-                    <input type="number" class="form-control" name="heartDisease" required="required" />
-                </div>
+           
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button
                     type="submit" class="button" >Predict</button>
             </div>
