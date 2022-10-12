@@ -170,7 +170,7 @@
         </nav>  
     </header><br /><br />
     <h1 style="text-align:center; color:darkgoldenrod; text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000,
-               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;">Heart Disease Prediction</h1>
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;">Liver Disease Prediction</h1>
     <h5 style="text-align:center; color:white; text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000,
                1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;">Please enter the patient details</h5>
     <form action="{{ url_for('predict')}}" method="post" class="form-inline">
@@ -178,56 +178,37 @@
             
             <div class="tabcontent" id="new">
                 <div class="form-group">
-                    <label for="age">Age </label>
-                    <input type="number" class="form-control" name="age" required="required">
+                    <label for="blood_pressure">Blood_Pressure </label>
+                    <input type="number" class="form-control" name="blood_pressure" required="required">
                 </div>
                 <div class="form-group">
-                    <label for="gender">Gender</label>
-                    <input type="number" class="form-control" name="gender" required="required">
+                    <label for="red_blood_cells_count">Red_Blood_Cells_Count</label>
+                    <input type="number" class="form-control" name="red_blood_cells_count" required="required">
                 </div>
                 <div class="form-group">
-                    <label for="chestPainType">ChestPainType</label>
-                    <input type="number" class="form-control" name="chestPainType" required="required" />
+                    <label for="specific_gravity">Specific_Gravity</label>
+                    <input type="number" class="form-control" name="specific_gravity" required="required" />
                 </div>
                 <div class="form-group">
-                    <label for="restingBP">RestingBP</label>
-                    <input type="number" class="form-control" name="restingBP" required="required" />
+                    <label for="blood_sugar_level">Blood_Sugar_Level</label>
+                    <input type="number" class="form-control" name="blood_sugar_level" required="required" />
                 </div>
                 <div class="form-group">
-                    <label for="cholesterol">Cholesterol</label>
-                    <input type="number" class="form-control" name="cholesterol" required="required" />
+                    <label for="albumin">Albumin</label>
+                    <input type="number" class="form-control" name="albumin" required="required" />
                 </div>
                 <div class="form-group">
-                    <label for="fastingBS">FastingBS</label>
-                    <input type="number" class="form-control" name="fastingBS" required="required" />
+                    <label for="puss_cell_count">Puss_Cell_Count</label>
+                    <input type="number" class="form-control" name="puss_cell_count" required="required" />
                 </div>
                 <div class="form-group">
-                    <label for="restingECG">RestingECG</label>
-                    <input type="number" class="form-control" name="restingECG" required="required" />
+                    <label for="puss_cell_clumps">Puss_Cell_Clumps</label>
+                    <input type="number" class="form-control" name="puss_cell_clumps" required="required" />
                 </div>
-                <div class="form-group">
-                    <label for="avg_glucose_level">Average_Glucose_Level</label>
-                    <input type="number" class="form-control" name="avg_glucose_level" required="required" />
-                </div>
-                <div class="form-group">
-                    <label for=maxHR"">MaxHR</label>
-                    <input type="number" class="form-control" name="maxHR" required="required" />
-                </div>
-                <div class="form-group">
-                    <label for="exerciseAngina">ExerciseAngina</label>
-                    <input type="number" class="form-control" name="exerciseAngina" required="required" />
-                </div>
-                <div class="form-group">
-                    <label for="oldpeak">Oldpeak</label>
-                    <input type="number" class="form-control" name="oldpeak" required="required" />
-                </div>
+                
                    <div class="form-group">
-                    <label for="st_slope">ST_Slope</label>
-                    <input type="number" class="form-control" name="st_slope" required="required" />
-                </div>
-                   <div class="form-group">
-                    <label for="heartDisease">HeartDisease<div class="form-group">
-                    <input type="number" class="form-control" name="heartDisease" required="required" />
+                    <label for="liverDisease">HeartDisease<div class="form-group">
+                    <input type="number" class="form-control" name="liverDisease" required="required" />
                 </div>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button
                     type="submit" class="button" >Predict</button>
