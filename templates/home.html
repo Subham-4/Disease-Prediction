@@ -11,7 +11,11 @@
 </head>
 <style>
     button {
-        border-style: none;
+        border-style: ridge;
+        background-color: rgb(158, 119, 177);
+        border-radius: 10px;
+        border-color: rgb(171, 129, 180);   
+        text-align: center;
     }
 
     h1,
@@ -34,12 +38,15 @@
         padding: 30px;
         border-width: 20px;
         border-style: groove;
-        border-color: #5a5a5a;
-        background-color: #fff;
+        border-radius: 30px;
+        border-color: #2220a2;
+        background-color: rgb(132, 191, 197);
+        font-family: cursive;
+        font-weight: bold;
     }
 
     fieldset h1 {
-        color: #5a5a5a;
+        color: #e31717;
         padding-bottom: 20px;
         margin-left: 35px;
         display: inline-block;
@@ -59,7 +66,7 @@
 
     fieldset input {
         padding: 8px;
-        color: #938c8c
+        color: #512525
     }
 
     fieldset input:focus {
@@ -67,10 +74,9 @@
     }
 
     fieldset button {
-        margin-left: 60px;
-        color: #fff;
-        background-color: #5a5a5a;
-        border-radius: 3px;
+        color: rgb(10, 9, 7);
+        background-color: rgb(151, 97, 158);
+        border-radius: 10px;
         padding: 13px 39px;
         text-align: center;
         letter-spacing: 0.9px;
@@ -81,14 +87,15 @@
         box-shadow: 0px 1px 3px 0px #5a5a5a;
         right: 0px;
         margin-top: 15px;
+        
     }
 
 
     .submit {
         margin-left: 60px;
-        color: #fff;
-        background-color: #5a5a5a;
-        border-radius: 3px;
+        color: rgb(8, 5, 0);
+        background-color: rgb(228, 241, 241);
+        border-radius: 10px;
         padding: 13px 39px;
         text-align: center;
         letter-spacing: 0.9px;
@@ -98,7 +105,7 @@
         font-size: 16px;
         box-shadow: 0px 1px 3px 0px #5a5a5a;
         right: 100px;
-        margin-top: 15px;
+        margin-top: 15px;       
     }
 
     #link_to_edit {
@@ -112,20 +119,60 @@
         padding: 30px;
         border-width: 25px;
         border-style: ridge;
-        border-color: #257a7a;
+        border-color: #06e4e4;
         box-shadow: 6px 13px 13px 0px black;
-        background-color: #ebfffa;
+        background-color: #ed0e0e;
     }
 </style>
 
-<body>
+<body style="background-image: url('https://thumbs.dreamstime.com/b/abstract-medical-background-hexagons-pattern-concepts-ideas-healthcare-technology-innovation-medicine-health-abstract-141474287.jpg');">
     <header>
-
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="#"><b>RISK ASSESS</b></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard">Get Started</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/disindex">Disease Index</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/cancer">Breast Cancer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/diabetes">Diabetes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/heart">Heart Disease</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/kidney">Kidney Disease</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/liver">Liver Disease</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">|</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>  
     </header><br /><br />
-    <h1 style="text-align:center;">Stroke Prediction</h1>
-    <h5 style="text-align:center;">Please enter the patient details</h5>
+    <h1 style="text-align:center; color:darkgoldenrod; text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;">Stroke Prediction</h1>
+    <h5 style="text-align:center; color:white; text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;">Please enter the patient details</h5>
     <form action="{{ url_for('predict')}}" method="post" class="form-inline">
         <fieldset>
+            
             <div class="tabcontent" id="new">
                 <div class="form-group">
                     <label for="gender">Gender </label>
@@ -168,7 +215,7 @@
                     <input type="number" class="form-control" name="smoking_status" required="required" />
                 </div>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button
-                    type="submit" class="btn btn-primary btn-lg">Predict</button>
+                    type="submit" class="button" >Predict</button>
             </div>
         </fieldset>
     </form>
