@@ -1,0 +1,2 @@
+You can get the Alzheimer Disease detection dataset by  going to this link.
+https://www.kaggle.com/datasets/yasserhessein/dataset-alzheimer
