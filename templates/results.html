@@ -37,6 +37,17 @@
     overflow-x: hidden;
 }
 
+form fieldset {
+        padding: 30px;
+        border-width: 20px;
+        border-style: groove;
+        border-radius: 30px;
+        border-color: #2220a2;
+        background-color: rgb(132, 191, 197);
+        font-family: cursive;
+        font-weight: bold;
+    }
+
 nav {
     font-family: sans-serif;
 }
@@ -72,15 +83,20 @@ nav {
 }
     </style>
 </head>
-<body>
-    <div id="assess">
-        <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-            <h1 class="display-5">Risk Assessment</h1>
-            <p class="lead">Please find below the Risk Assessment</p>
+<body style="background-image: url('https://thumbs.dreamstime.com/b/abstract-medical-background-hexagons-pattern-concepts-ideas-healthcare-technology-innovation-medicine-health-abstract-141474287.jpg');">
+    <fieldset>
+        <div id="assess">
+            <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+                <h1 style="text-align:center; color:white; text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000,
+                1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;">Risk Assessment</h1>
+                <h2 style="text-align:center; color:white; text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000,
+                1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;">Chances of you having this disease is : </h2>
+            </div>
+            <div><h1 style="text-align:center; color:white; text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000,
+                1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff; text-align: center;">prediction_text</h1></div>
+        
         </div>
-        <div class="container themed-container"><h1 style="text-align: center;">{{prediction_text}}</h1></div>
-     
-    </div>
+    </fieldset>
     <br/>
 
 </body>
