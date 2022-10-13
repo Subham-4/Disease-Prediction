@@ -7,9 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/carousel/">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
-
-   <title>HealthCare | Diabetes Prediction</title>
-
+    <title>HealthCare | Heart Disease Prediction</title>
 </head>
 <style>
     button {
@@ -130,8 +128,6 @@
 <body style="background-image: url('https://thumbs.dreamstime.com/b/abstract-medical-background-hexagons-pattern-concepts-ideas-healthcare-technology-innovation-medicine-health-abstract-141474287.jpg');">
     <header>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-
-
             <a class="navbar-brand" href="#"><b>HEALTH CARE</b></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -140,7 +136,6 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-
                         <a class="nav-link" href="/home">Home</a>
                     </li>
                     <li class="nav-item">
@@ -150,13 +145,12 @@
                         <a class="nav-link" href="/kidney">Kidney Disease</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="/diabetes">Diabetes</a>
+                        <a class="nav-link" href="/diabetes">Diabetes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/heart">Heart Disease</a>
+                        <a class="nav-link active" href="/heart">Heart Disease</a>
                     </li>
                     <li class="nav-item">
-
                         <a class="nav-link" href="/stroke">Stroke</a>
                     </li>
                     <li class="nav-item">
@@ -164,68 +158,73 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/symptoms">Prediction using Symptoms</a>
-
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">|</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/logout">Logout</a>
-
-
+                        <a class="nav-link" href="/about">About</a>
                     </li>
                 </ul>
             </div>
         </nav>  
     </header><br /><br />
     <h1 style="text-align:center; color:darkgoldenrod; text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000,
-               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;">Diabetes Prediction</h1>
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;">Heart Disease Prediction</h1>
     <h5 style="text-align:center; color:white; text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000,
                1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;">Please enter the patient details</h5>
-
-
     <form action="{{ url_for('predict_s')}}" method="post" class="form-inline">
         <fieldset>
             
             <div class="tabcontent" id="new">
                 <div class="form-group">
-                    <label for="pregnancies">Pregnancies </label>
-                    <input type="number" class="form-control" name="pregnancies" required="required">
+                    <label for="age">Age </label>
+                    <input type="number" class="form-control" name="age" required="required">
                 </div>
                 <div class="form-group">
-                    <label for="glucose">Glucose</label>
-                    <input type="number" class="form-control" name="glucose" required="required">
+                    <label for="gender">Gender</label>
+                    <input type="number" class="form-control" name="gender" required="required">
                 </div>
                 <div class="form-group">
-                    <label for="bloodpresssure">BloodPressure</label>
-                    <input type="number" class="form-control" name="bloodPressure" required="required" />
+                    <label for="chestPainType">ChestPainType</label>
+                    <input type="number" class="form-control" name="chestPainType" required="required" />
                 </div>
                 <div class="form-group">
-                    <label for="skinthickness">SkinThickness</label>
-                    <input type="number" class="form-control" name="skinthickness" required="required" />
+                    <label for="restingBP">RestingBP</label>
+                    <input type="number" class="form-control" name="restingBP" required="required" />
                 </div>
                 <div class="form-group">
-                    <label for="insulin">Insulin</label>
-                    <input type="number" class="form-control" name="insulin" required="required" />
+                    <label for="cholesterol">Cholesterol</label>
+                    <input type="number" class="form-control" name="cholesterol" required="required" />
                 </div>
                 <div class="form-group">
-                    <label for="bmi">BMI</label>
-                    <input type="number" class="form-control" name="bmi" required="required" />
+                    <label for="fastingBS">FastingBS</label>
+                    <input type="number" class="form-control" name="fastingBS" required="required" />
                 </div>
                 <div class="form-group">
-                    <label for="diabetespedigreefunction">DiabetesPedigreeFunction</label>
-                    <input type="number" class="form-control" name="diabetespedigreefunction" required="required" />
+                    <label for="restingECG">RestingECG</label>
+                    <input type="number" class="form-control" name="restingECG" required="required" />
                 </div>
                 <div class="form-group">
-                    <label for="age">Age</label>
-                    <input type="number" class="form-control" name="age" required="required" />
+                    <label for="avg_glucose_level">Average_Glucose_Level</label>
+                    <input type="number" class="form-control" name="avg_glucose_level" required="required" />
                 </div>
-
                 <div class="form-group">
-                    <label for="outcome">Outcome</label>
-                    <input type="number" class="form-control" name="outcome" required="required" />
+                    <label for="maxHR">MaxHR</label>
+                    <input type="number" class="form-control" name="maxHR" required="required" />
                 </div>
-
+                <div class="form-group">
+                    <label for="exerciseAngina">ExerciseAngina</label>
+                    <input type="number" class="form-control" name="exerciseAngina" required="required" />
+                </div>
+                <div class="form-group">
+                    <label for="oldpeak">Oldpeak</label>
+                    <input type="number" class="form-control" name="oldpeak" required="required" />
+                </div>
+                   <div class="form-group">
+                    <label for="st_slope">ST_Slope</label>
+                    <input type="number" class="form-control" name="st_slope" required="required" />
+                </div>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button
                     type="submit" class="button" >Predict</button>
             </div>
