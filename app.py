@@ -1,3 +1,9 @@
+import cv2
+import pickle
+from tensorflow.keras.models import model_from_json
+import tensorflow as tf
+import numpy as np
+from flask import Flask, render_template, request, redirect, url_for
 l1 = ['itching', 'skin_rash', 'nodal_skin_eruptions', 'continuous_sneezing', 'shivering', 'chills', 'joint_pain',
       'stomach_pain', 'acidity', 'ulcers_on_tongue', 'muscle_wasting', 'vomiting', 'burning_micturition', 'spotting_urination', 'fatigue',
       'weight_gain', 'anxiety', 'mood_swings', 'weight_loss', 'restlessness', 'lethargy', 'patches_in_throat',
@@ -26,11 +32,6 @@ disease = ['Fungal infection', 'Allergy', 'GERD', 'Chronic cholestasis', 'Drug R
            'Arthritis', '(vertigo) Paroymsal  Positional Vertigo', 'Acne', 'Urinary tract infection', 'Psoriasis',
            'Impetigo']
 
-from flask import Flask, render_template, request, redirect, url_for
-import numpy as np
-import tensorflow as tf
-from tensorflow.keras.models import model_from_json
-import pickle
 
 stroke = open("models/Stroke.json", "r")
 loaded_data = stroke.read()
@@ -60,37 +61,46 @@ symptoms_model = pickle.load(open('models/Symptom', 'rb'))
 
 app = Flask(__name__)
 
+
 @app.route('/')
 def home():
     return render_template('home.html')
+
 
 @app.route('/liver')
 def liver():
     return render_template('liver.html')
 
+
 @app.route('/kidney')
 def kidney():
     return render_template('kidney.html')
+
 
 @app.route('/diabetes')
 def diabetes():
     return render_template('diabetes.html')
 
+
 @app.route('/heart')
 def heart():
     return render_template('heart.html')
+
 
 @app.route('/stroke')
 def stroke():
     return render_template('stroke.html')
 
+
 @app.route('/alzheimer')
 def alzheimer():
     return render_template('alzheimer.html')
 
+
 @app.route('/symptoms')
 def symptoms():
     return render_template('symptoms.html')
+
 
 @app.route('/result_S',  methods=['GET', 'POST'])
 def result_S():
@@ -98,12 +108,13 @@ def result_S():
         lst = [float(x) for x in request.form.values()]
         arr = [np.array([lst, ])]
         output = stroke_model.predict(arr)
-        if output[0][0]==1:
+        if output[0][0] == 1:
             output *= 99
         else:
             output *= 100
 
     return render_template('result_S.html', prediction_text="{:.2f} %".format(output[0][0]))
+
 
 @app.route('/result_H',  methods=['GET', 'POST'])
 def result_H():
@@ -118,6 +129,7 @@ def result_H():
 
     return render_template('result_H.html', prediction_text="{:.2f} %".format(output[0][0]))
 
+
 @app.route('/result_L',  methods=['GET', 'POST'])
 def result_L():
     if request.method == 'POST':
@@ -130,6 +142,7 @@ def result_L():
             output *= 100
 
     return render_template('result_L.html', prediction_text="{:.2f} %".format(output[0][0]))
+
 
 @app.route('/result_K',  methods=['GET', 'POST'])
 def result_K():
@@ -144,31 +157,39 @@ def result_K():
 
     return render_template('result_K.html', prediction_text="{:.2f} %".format(output[0][0]))
 
+
 @app.route('/result_D',  methods=['GET', 'POST'])
 def result_D():
     if request.method == 'POST':
         lst = [float(x) for x in request.form.values()]
         arr = [np.array([lst, ])]
         output = diabetes_model.predict(arr)
-        if output[0][0]==1:
+        if output[0][0] == 1:
             output *= 99
         else:
             output *= 100
 
     return render_template('result_D.html', prediction_text="{:.2f} %".format(output[0][0]))
 
+
 @app.route('/result_A',  methods=['GET', 'POST'])
 def result_A():
     if request.method == 'POST':
-        lst = [float(x) for x in request.form.values()]
-        arr = [np.array([lst, ])]
-        output = alzheimer_model.predict(arr)
-        if output[0][0]==1:
-            output *= 99
+        img = cv2.imread(request.form.get('brainscan'))
+        arr = np.array(img)
+        arr = arr.reshape(1, 208, 176, 3)
+        val = alzheimer_model.predict(arr)
+        if val == 0:
+            output = "No Dimentia"
+        elif val == 1:
+            output = "Very Mild Dimentia"
+        elif val == 2:
+            output = "Mild Dimentia"
         else:
-            output *= 100
+            output = "Moderate Dimentia"
 
-    return render_template('result_A.html', prediction_text="{:.2f} %".format(output[0][0]))
+    return render_template('result_A.html', prediction_text="{}".format(output))
+
 
 @app.route('/result_SY',  methods=['GET', 'POST'])
 def result_SY():
@@ -176,12 +197,13 @@ def result_SY():
         lst = [x for x in request.form.values()]
         arr = np.zeros(132)
         for k in lst:
-            for i,j in enumerate(l1):
+            for i, j in enumerate(l1):
                 if k == j:
                     arr[i] = 1
         output = symptoms_model.predict([arr])
 
     return render_template('result_SY.html', prediction_text="{}".format(disease[output[0]]))
+
 
 if __name__ == "__main__":
     app.run(debug=True)
