@@ -1,10 +1,12 @@
 streamlit
 numpy
 scikit-learn
-opencv-python
+opencv-python-headless
 Pillow
 tensorflow
 Flask
+opencv-python
+pickle
 
 
 eventlet         
