@@ -6,6 +6,7 @@ Pillow
 tensorflow
 Flask
 cv2
+opencv-python
 
 
 eventlet         
