@@ -1,9 +1,9 @@
-import cv2
 import pickle
 from tensorflow.keras.models import model_from_json
 import tensorflow as tf
 import numpy as np
 from flask import Flask, render_template, request, redirect, url_for
+import cv2
 l1 = ['itching', 'skin_rash', 'nodal_skin_eruptions', 'continuous_sneezing', 'shivering', 'chills', 'joint_pain',
       'stomach_pain', 'acidity', 'ulcers_on_tongue', 'muscle_wasting', 'vomiting', 'burning_micturition', 'spotting_urination', 'fatigue',
       'weight_gain', 'anxiety', 'mood_swings', 'weight_loss', 'restlessness', 'lethargy', 'patches_in_throat',
