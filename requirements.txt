@@ -1,6 +1,6 @@
 opencv-python-headless
 Flask
-tensorflow
+tensorflow-cpu
  
      
 
