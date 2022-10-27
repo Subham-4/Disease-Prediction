@@ -3,7 +3,6 @@ opencv-python-headless
 Flask
 tensorflow-cpu
 gunicorn
-pickle
 
      
 
