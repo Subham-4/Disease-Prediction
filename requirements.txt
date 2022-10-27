@@ -5,15 +5,9 @@ opencv-python-headless
 Pillow
 tensorflow
 Flask
-
-
-eventlet         
-Flask            
-Flask-Session    
+   
 Flask-SocketIO   
-gevent           
-gevent-websocket 
-Werkzeug         
+        
 
 
 
