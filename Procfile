@@ -1,1 +1,1 @@
-web: gunicorn app.py:health-care-assessment
+web: gunicorn app:app
