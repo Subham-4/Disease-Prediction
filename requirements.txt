@@ -1,15 +1,11 @@
-streamlit
 numpy
-scikit-learn
 opencv-python-headless
-Pillow
 tensorflow
 Flask
 
-
-eventlet         
+        
 Flask-Session    
-Werkzeug         
+     
 
 
 
