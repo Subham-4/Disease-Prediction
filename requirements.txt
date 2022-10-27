@@ -1,10 +1,6 @@
-numpy
 opencv-python-headless
-tensorflow
 Flask
-
-        
-Flask-Session    
+ 
      
 
 
