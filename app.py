@@ -205,5 +205,3 @@ def result_SY():
     return render_template('result_SY.html', prediction_text="{}".format(disease[output[0]]))
 
 
-if __name__ == "__main__":
-    app.run(debug=False)
